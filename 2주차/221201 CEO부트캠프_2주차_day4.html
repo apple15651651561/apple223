@@ -1,0 +1,86 @@
+<!DOCTYPE>
+<html lang="ko">
+<head>
+  <meta charset = "utf-8">
+  <title> 221201 과제 </title>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    $(document).ready (()=>{
+      $("#button1").on("click", ()=>{
+        let newText = $("h1").html();
+        $("#text1").html(newText);
+      });
+    });
+
+    $(document).ready (()=>{
+      $("#button2").on("click", () => {
+        $("#soccer1").append("<li>사비 에르난데스</li>");
+      });
+    });
+
+    $(document).ready (()=>{
+      $("#soccer2").on("click", () => {
+        $("#text2").show();
+      });
+      $("#soccer3").on("click", () => {
+        $("#text2").hide();
+
+      });
+    });
+
+    $(document).ready (()=>{
+      $("#soccer4").on("click", () => {
+        $("#text3").fadeIn();
+      });
+      $("#soccer5").on("click", () => {
+        $("#text3").fadeOut();
+
+      });
+    });
+
+    $(document).ready (()=>{
+      $("#soccer6").on("click", () => {
+        $("#text4").slideUp();
+      });
+      $("#soccer7").on("click", () => {
+        $("#text4").slideDown();
+
+      });
+    });
+  </script>
+
+
+</head>
+
+<body>
+  <h1> apple223 </h1>
+  <button id = "button1"> banana </button>
+  <p id = "text1">  </p>
+
+
+  <h2> 안드레스 이니에스타 </h2>
+  <ul id = "soccer1">
+    <li> "Lionel Messi" </li>
+    <li> "부스케츠" </li>
+    <li> "다니엘 알베스" </li>
+  </ul>
+  <button id = "button2"> 축구선수 추가1 </button>
+</br>
+
+  <button id = "soccer2"> on </button>
+  <button id = "soccer3"> off </button>
+  <p id = "text2"> 사비 에르난데스 </p>
+</br>
+
+  <button id = "soccer4"> on </button>
+  <button id = "soccer5"> off </button>
+  <p id = "text3"> 리오넬 메시 </p>
+
+</br>
+  <button id = "soccer6"> on </button>
+  <button id = "soccer7"> off </button>
+  <p id = "text4"> 네이마르 </p>
+</br>
+</body>
+
+</html>

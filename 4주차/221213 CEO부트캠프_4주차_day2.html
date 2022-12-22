@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+
+    <title>Welcome to Firebase Hosting</title>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyC0KALn8INXWe2kHp5gJ5CIPwn_i5s4Z7Y",
+        authDomain: "database-apple223.firebaseapp.com",
+        databaseURL: "https://database-apple223-default-rtdb.firebaseio.com",
+        projectId: "database-apple223",
+        storageBucket: "database-apple223.appspot.com",
+        messagingSenderId: "480812090271",
+        appId: "1:480812090271:web:eb43e43ebb7ffbf78133aa"
+      };
+
+      firebase.initializeApp(firebaseConfig);
+      let database = firebase.database();
+      
+      $(document).ready(()=>{
+
+        $("#chatList").hide();
+
+        $("#join").on("click", ()=>{
+          let id = $("#idvalue").val();
+          let pwd = $("#pwdvalue").val();
+          database.ref("members/"+id).set(pwd);
+
+        });
+        $("#login").on("click", ()=>{
+          let id = $("#idvalue").val();
+          let pwd = $("#pwdvalue").val();
+          database.ref("members/"+id).on("value", (snapshot)=>{
+            if(snapshot.val()){
+              if(pwd==snapshot.val()){
+                alert("로그인 되었습니다");
+                $("#chatList").show();
+              }
+              else{
+                alert("패스워드가 일치하지 않습니다");
+              }
+            }
+            else{
+              alert("가입되지 않은 회원");
+
+            }
+          });
+        });
+      });
+
+    </script>
+
+  </head>
+  <body>
+    <input type ="text" id="idvalue" placeholder="아이디">
+    <input type ="password" id="pwdvalue" placeholder="패스워드">
+    <button id="join">회원가입</button>
+    <button id="login">로그인</button>
+
+
+    <div id="chatList">
+      채팅내용
+
+    </div>
+  </body>
+</html>

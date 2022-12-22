@@ -1,0 +1,53 @@
+<!-- Json 구조 이해 -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Json 예제 실습</title>
+
+    <script>
+      $(document).ready(()=> {
+// 배열 형태는 한계가 있다.
+        let apple223 = ["성중훈", 26, 175, 75, "wg1376@naver.com", "B"];
+
+// 그래서 Json으로 담아야한다.
+        let apple223Json = {
+          name : "성중훈",
+          age : 26,
+          height : 175,
+          weight : 75,
+          email : "wg1376@naver.com",
+          type : "B"
+        }
+
+        alert(apple223Json["age"]);
+
+        let userList = [
+          {name:"성중훈",age:27,type:"B"},
+          {name:"사비",age:40,type:"A"},
+          {name:"메시",age:35,type:"AB"},
+          {name:"부스케츠",age:33,type:"O"},
+          {name:"이니에스타",age:38,type:"B"},
+          {name:"푸욜",age:43,type:"A"},
+
+        ];
+// 글자를 붙일 때는 append 다음 괄호 안처럼 쓴다.
+        for(i=0;i<6;i++){
+         $("#userList").append("<div>"+userList[i]["age"]+userList[i]["name"]+userList[i]["type"]+"</div>");
+
+        };        
+
+      });
+    </script>
+
+    
+  </head>
+
+
+  <body>
+    <div id="userList">
+    </div>
+  </body>
+</html>

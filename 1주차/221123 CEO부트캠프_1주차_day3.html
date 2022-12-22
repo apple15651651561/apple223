@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<!-- %는 나눴을 때의 나머지 -->
+    <script>
+      let year1 = 1995;
+
+      if(year1%12==0){
+        alert("원숭이");
+      }else if(year1%12==1){
+        alert("닭");
+      }else if(year1%12==2){
+        alert("개");
+      }else if(year1%12==3){
+        alert("돼지");
+      }else if(year1%12==4){
+        alert("쥐");
+      }else if(year1%12==5){
+        alert("소");
+      }else if(year1%12==6){
+        alert("호랑이");
+      }else if(year1%12==7){
+        alert("토끼");
+      }else if(year1%12==8){
+        alert("용");
+      }else if(year1%12==9){
+        alert("뱀");
+      }else if(year1%12==10){
+        alert("말");
+      }else if(year1%12==11){
+        alert("양");
+      }
+
+    let sum = 0;
+
+    for(let i = 0; i<=100; i=i+2){
+      sum = sum + i;
+    }
+    alert(sum);
+
+// i++ => i=i+1과 같은 의미이다.
+    let a = ["원숭이", "닭", "개", "돼지", "쥐", "소", "호랑이", "토끼", "용", "뱀", "말", "양"];
+    let year2 = 1997;
+
+    for(let i=0;i<12;i++){
+      if(year2%12==i){
+        alert(a[i]);
+      }
+    }
+
+    </script>
+
+
+  </head>
+
+  <body>
+
+  </body>
+
+</html>
